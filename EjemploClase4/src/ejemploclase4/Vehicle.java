@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package ejemploclase4;
 
 /**
@@ -9,5 +6,10 @@ package ejemploclase4;
  * @author diego
  */
 public class Vehicle {
+    protected String brand ="Ford";
+    
+    public void honk(){
+        System.out.println("Tuut, tuut!");
+    }
     
 }

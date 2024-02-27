@@ -1,20 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
-package ejemploclase4;
-
 /**
  *
  * @author diego
  */
+package ejemploclase4;
+
+
 public class EjemploClase4 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Car myCar= new Car();
+        //Llamamos el metodos honk
+        myCar.honk();
+        System.out.println(myCar.brand+" "+myCar.modelname);
     }
     
 }
