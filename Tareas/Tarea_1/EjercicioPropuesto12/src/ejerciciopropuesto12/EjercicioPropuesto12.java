@@ -32,11 +32,9 @@ public class EjercicioPropuesto12 {
         salarioNeto=salarioBruto-retencion;
         
         //Imprimimos los valores calculados
-        System.out.println("El Salario bruto del trabajador es: "+salarioBruto);
-        System.out.println("El valor de la retencion es: "+retencion);
+        System.out.println("El Salario bruto del trabajador es : "+salarioBruto);
+        System.out.println("El valor de la retencion es : "+retencion);
         System.out.println("EL Salario neto del trabajador es : "+salarioNeto);
-        
-        
         
     }
     
