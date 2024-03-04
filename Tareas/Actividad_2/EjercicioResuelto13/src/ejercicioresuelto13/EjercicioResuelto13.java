@@ -13,6 +13,13 @@ public class EjercicioResuelto13 {
 
     public static void main(String[] args) {
         
+        Sorteo mySorteo=new Sorteo();
+        
+        mySorteo.valComp=200000;
+        mySorteo.color="Rojo";
+        
+        System.out.println(mySorteo.calcValuePag());
+        
     }
     
 }
