@@ -7,23 +7,36 @@
  * 
  */
 package ejerciciopropuesto18;
-
+//Importamos la class Scanner
+import java.util.Scanner;
 
 public class EjercicioPropuesto18 {
     
     public static void main(String[] args) {
+        //Instanciamos la class Scanner
+        Scanner inPut=new Scanner(System.in);
+        
         //Creamos un objeto de la class Empleado
         Empleado empleado1 = new Empleado();
         //Asignamos el codigo del empleado
-        empleado1.code=156417;
+        System.out.print("Introduce el codigo del empleado: ");
+        empleado1.code=inPut.nextInt();
+        
         //Asignamos el nombre del empleado
-        empleado1.fName="Jose";
-        //Asignamos el valor de horas trabajadas por el empleado1
-        empleado1.nHours=48;
+        System.out.print("Introduce el nombre del empleado: ");
+        empleado1.fName=inPut.next();
+        
+        //Asignamos el numero de horas trabajadas por el empleado1
+        System.out.print("Introduce el numero de horas trabajadas: ");
+        empleado1.nHours=inPut.nextInt();
+        
         //Asignamos el valor por horas
-        empleado1.valueHours=20000;
+        System.out.print("Introduce el valor de las horas del empleado: ");
+        empleado1.valueHours=inPut.nextDouble();
+        
         //Asignamos el porcetaje de retencion para el empleado1
-        empleado1.percRetention=0.10;
+        System.out.print("Introduce el porcentaje de retencion: ");
+        empleado1.percRetention=inPut.nextDouble()/100;
         
         //Imprimimos toda la informacion del empleado1
         System.out.println("Empleado 1");
