@@ -14,32 +14,28 @@ import java.util.Scanner;
 public class EjercicioPropuesto19 {
     //Triangulo Equilatero
     public static void main(String[] args) {
-        //Definimos el lado del triangulo 
-        double  edge;
-        //Definimos los parametros del Triangulo
-        double height;   //altura
-        double area;     //area
-        double perimeter; //perimetro
+        //Instanciamos la class Triangulo Equilatero
+        TrianguloEquilatero triangulo = new TrianguloEquilatero();
+        
+
         
         
         //Definimos una objeto de la class Scanner
         Scanner inPut = new Scanner(System.in);
         //Insertamos el valor del lado de tipo double
         System.out.print("Intruzca el valor de lado del triangulo: ");
-        edge = inPut.nextDouble();
+        triangulo.edge = inPut.nextDouble();
         
-        perimeter=3*edge; 
-        height= edge*Math.sin(Math.PI/3);
-        area= (height*edge)/2;
+        
         
         //Imprimimos los los atributos del triangulo
-        System.out.println("El triangulo equilatero de lado "+edge+" tiene: ");
+        System.out.println("El triangulo equilatero de lado "+triangulo.edge+" tiene: ");
         
-        System.out.println("La altura maxima del triangulo es: "+height);
+        System.out.printf("La altura maxima del triangulo es: %.2f \n",triangulo.alturaTrian());
         
-        System.out.println("El perimetro del triangulo es: "+perimeter);
+        System.out.printf("El perimetro del triangulo es: %.2f \n",triangulo.perimetroTrian());
         
-        System.out.println("El area del triangulo es: "+area);
+        System.out.printf("El area del triangulo es: %.2f \n",triangulo.areaTrian());
         
     }
     
