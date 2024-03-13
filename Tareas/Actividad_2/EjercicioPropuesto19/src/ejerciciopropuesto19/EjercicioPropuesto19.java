@@ -23,7 +23,7 @@ public class EjercicioPropuesto19 {
         //Definimos una objeto de la class Scanner
         Scanner inPut = new Scanner(System.in);
         //Insertamos el valor del lado de tipo double
-        System.out.print("Intruzca el valor de lado del triangulo: ");
+        System.out.print("Intruzca el valor del lado del triangulo: ");
         triangulo.edge = inPut.nextDouble();
         
         

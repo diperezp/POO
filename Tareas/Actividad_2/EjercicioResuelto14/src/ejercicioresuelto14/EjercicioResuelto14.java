@@ -34,7 +34,7 @@ public class EjercicioResuelto14 {
         pagos.ventasDepart3=inPut.nextDouble();
         
         //Pedimos por consola el salario de los departamentos
-        System.out.println("Introduce el salario del departamento i: ");
+        System.out.print("Introduce el salario del departamento i: ");
         pagos.salaryDepart=inPut.nextDouble();
         
         //Hacemos el calculo de los salarios y los incentivos de los salarios
