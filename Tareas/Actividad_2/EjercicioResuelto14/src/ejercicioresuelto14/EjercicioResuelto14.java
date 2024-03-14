@@ -41,8 +41,23 @@ public class EjercicioResuelto14 {
         pagos.calcPagosEmpresa();
         
         //Imprimimos la informacion de los pagos de los empleados
+        System.out.println("Las Ventas del departamento 1 son: "+pagos.ventasDepart1);
         
+        System.out.println("Las Ventas del departamento 2 son: "+pagos.ventasDepart2);
         
+        System.out.println("Las Ventas del departamento 3 son: "+pagos.ventasDepart3);
+        
+        System.out.println("El salario general de los departamentos es: "+pagos.salaryDepart);
+        
+        System.out.println("Las ventas totales de la empresa son: "+pagos.ventasTotal);
+        
+        System.out.println("El 33% de las ventas equivale a: "+pagos.valuePercentIncetiv);
+        
+        System.out.println("El Salario final del departamento 1 es: "+pagos.salaryDepart1);
+        
+        System.out.println("El Salario final del departamento 2 es: "+pagos.salaryDepart2);
+        
+        System.out.println("El Salario final del departamento 3 es: "+pagos.salaryDepart3);
         
         
 

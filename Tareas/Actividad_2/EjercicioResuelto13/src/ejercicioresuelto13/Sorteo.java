@@ -46,6 +46,7 @@ public class Sorteo {
                 break;
             default:
                 break;
+                pDes=100;           //100% de descuento si no es de la bolas anteriores
         }
         //Calculo del valor a Pagar
         valPag=valComp*(100-pDes)/100;
