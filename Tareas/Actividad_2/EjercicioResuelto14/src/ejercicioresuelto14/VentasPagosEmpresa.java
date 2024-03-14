@@ -25,10 +25,10 @@ public class VentasPagosEmpresa {
     double salaryDepart3;
     
     //Ventas totales de la empresa
-    public double ventasTotal;
+    double ventasTotal;
     
     //33% de las ventas
-    public double valuePercentIncetiv;
+    double valuePercentIncetiv;
 
     
     /*Definimos los metodos de la clase*/
@@ -37,7 +37,7 @@ public class VentasPagosEmpresa {
     public void calcPagosEmpresa(){
         
         //Calculo del valor de ventas totales de la empresa
-        ventasTotal=salaryDepart1+salaryDepart2+salaryDepart3;
+        ventasTotal=ventasDepart1+ventasDepart2+ventasDepart3;
         
         //El valor correspondiente al 33% de las ventas
         valuePercentIncetiv=ventasTotal*0.33;
@@ -48,18 +48,25 @@ public class VentasPagosEmpresa {
         if(ventasDepart1>valuePercentIncetiv){
             salaryDepart1=salaryDepart*1.2;  //mas 20% de incentivo
         }
+        else{
+            salaryDepart1=salaryDepart;  
+        }
         
         //Evaluamos si el departamento 2 aplica para el incentivo
         if (ventasDepart2>valuePercentIncetiv){
             salaryDepart2=salaryDepart*1.2;  // mas 20% de incentivo
         }
-        
+        else{
+            salaryDepart2=salaryDepart;  
+        }        
         //Evaluamos si el depatamento 3 aplica para el incentivo
         
         if(ventasDepart3>valuePercentIncetiv){
             salaryDepart3=salaryDepart*1.2; //mas 20% de incentivo
         }
-        
+        else{
+            salaryDepart2=salaryDepart;  
+        }        
         
         
     }
