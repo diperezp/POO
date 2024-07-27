@@ -41,7 +41,7 @@ public class EmpleadoInterfaz extends javax.swing.JFrame {
         porcentajeRetencionTxt = new javax.swing.JTextField();
         buttonInformation = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        textArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,10 +83,15 @@ public class EmpleadoInterfaz extends javax.swing.JFrame {
         });
 
         buttonInformation.setText("Data");
+        buttonInformation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonInformationActionPerformed(evt);
+            }
+        });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        textArea1.setColumns(20);
+        textArea1.setRows(5);
+        jScrollPane1.setViewportView(textArea1);
 
         javax.swing.GroupLayout numeroHorasLayout = new javax.swing.GroupLayout(numeroHoras);
         numeroHoras.setLayout(numeroHorasLayout);
@@ -175,6 +180,13 @@ public class EmpleadoInterfaz extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Creamos una instancia de la clase Empleado para poder utilizarla en todas
+     * las funciones
+     */
+    Empleado employee = new Empleado();
+    
+    
     private void codigotxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigotxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_codigotxtActionPerformed
@@ -191,40 +203,39 @@ public class EmpleadoInterfaz extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_porcentajeRetencionTxtActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EmpleadoInterfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EmpleadoInterfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EmpleadoInterfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EmpleadoInterfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void buttonInformationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInformationActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new EmpleadoInterfaz().setVisible(true);
-            }
-        });
-    }
+        //asignamos la informacion escrito en los textfield a cada uno de los atributos correspondientes del objeto
+        //Codigo del empleado
+        employee.code=Integer.parseInt(codigotxt.getText());
+        //Nombre del empleado
+        employee.fName=nombretxt.getText();
+        //Numero de horas trabajadas del empleado
+        employee.nHours=Integer.parseInt(numeroHorastxt.getText());
+        //Valor por hora para el empleado
+        employee.valueHours=Double.parseDouble(valorhorastxt.getText());
+        //porcentaje de retencion
+        employee.percRetention=Double.parseDouble(porcentajeRetencionTxt.getText());
+        
+        //Limpiamos el area de texto para ingresar la nueva informacion
+        textArea1.setText("");
+        
+        
+        //Ahora presentamos el texto en el Area de texto
+        //Nombre
+        textArea1.append("Nombre: "+employee.fName+"\n");
+        //Codigo
+        textArea1.append("Codigo: "+employee.code+"\n");
+        //Salario Brto
+        textArea1.append("Salario Bruto: "+ employee.brutoSalary()+"\n");
+        //Salario Neto
+        textArea1.append("Salario Neto: "+employee.netoSalary()+"\n");
+        
+        
+        
+        
+    }//GEN-LAST:event_buttonInformationActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonInformation;
@@ -233,13 +244,13 @@ public class EmpleadoInterfaz extends javax.swing.JFrame {
     private javax.swing.JTextField codigotxt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel nombrelabel;
     private javax.swing.JTextField nombretxt;
     private javax.swing.JPanel numeroHoras;
     private javax.swing.JTextField numeroHorastxt;
     private javax.swing.JLabel porcentajeRetencion;
     private javax.swing.JTextField porcentajeRetencionTxt;
+    private javax.swing.JTextArea textArea1;
     private javax.swing.JLabel titulo;
     private javax.swing.JLabel valorHoras;
     private javax.swing.JTextField valorhorastxt;

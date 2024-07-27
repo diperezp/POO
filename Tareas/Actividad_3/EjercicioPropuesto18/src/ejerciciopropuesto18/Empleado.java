@@ -36,7 +36,7 @@ public class Empleado {
     
     //Calculomos el salario neto del empleado
     public double netoSalary(){
-        nSalary=bSalary*(1-percRetention);
+        nSalary=bSalary*(100-percRetention)/100;
         return nSalary;
     }
     
