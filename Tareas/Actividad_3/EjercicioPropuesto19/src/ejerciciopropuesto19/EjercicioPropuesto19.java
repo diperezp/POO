@@ -4,17 +4,17 @@
  */
 package ejerciciopropuesto19;
 
-/**
- *
- * @author diego
- */
+
 public class EjercicioPropuesto19 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+      
+        TrianguloEquilateroGUI interfazTrian=new TrianguloEquilateroGUI();
+        interfazTrian.setVisible(true);
+        interfazTrian.setLocationRelativeTo(null);
     }
     
 }

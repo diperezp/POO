@@ -58,6 +58,11 @@ public class TrianguloEquilateroGUI extends javax.swing.JFrame {
         });
 
         btnPerimetro.setText("Perimetro (m)");
+        btnPerimetro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPerimetroActionPerformed(evt);
+            }
+        });
 
         btnAltura.setText("Altura (m)");
         btnAltura.addActionListener(new java.awt.event.ActionListener() {
@@ -71,31 +76,25 @@ public class TrianguloEquilateroGUI extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnAltura)
+                            .addComponent(txtAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnPerimetro)
+                                .addGap(0, 59, Short.MAX_VALUE))
+                            .addComponent(txtPerimetro)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
-                            .addComponent(txtLado, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnAltura)
-                                    .addComponent(txtAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(btnPerimetro)
-                                        .addGap(0, 58, Short.MAX_VALUE))
-                                    .addComponent(txtPerimetro)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtArea, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnArea))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                            .addComponent(txtLado, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtArea, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnArea))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(98, 98, 98)
@@ -153,17 +152,31 @@ public class TrianguloEquilateroGUI extends javax.swing.JFrame {
         triangulo.edge=Double.parseDouble(txtLado.getText());
         
         //Presentamos el valor del area del triangulo
-        txtArea.setText(String.(triangulo.areaTrian()));
+        txtArea.setText(Double.toString(triangulo.areaTrian()));
+        
     }//GEN-LAST:event_btnAreaActionPerformed
-
-    private void txtAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAreaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtAreaActionPerformed
 
     private void btnAlturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlturaActionPerformed
         //Asignamos el valor del lado del traingulo
         triangulo.edge=Double.parseDouble(txtLado.getText());
+        
+        //Presentamos el valor de la altura del triangulo
+        txtAltura.setText(Double.toString(triangulo.alturaTrian()));
+        
     }//GEN-LAST:event_btnAlturaActionPerformed
+
+    private void txtAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAreaActionPerformed
+
+        
+    }//GEN-LAST:event_txtAreaActionPerformed
+
+    private void btnPerimetroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerimetroActionPerformed
+        //Asignamos el valor del lado del traingulo
+        triangulo.edge=Double.parseDouble(txtLado.getText());
+        
+        //Presentamos el valor del perimetro del triangulo
+        txtPerimetro.setText(Double.toString(triangulo.perimetroTrian()));
+    }//GEN-LAST:event_btnPerimetroActionPerformed
 
 
 

@@ -37,7 +37,7 @@ public class TrianguloEquilatero {
     
     //Calculo de el area del Triangulo
     public double areaTrian(){
-        area=height*edge/2;
+        area=alturaTrian()*edge/2;
         return area;
     }
 }
