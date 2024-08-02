@@ -1,20 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+/**
+ * @author diperezp
+ * @date 31-07-2024
+ * @brief Implementacion de la interfaz grafica para la class Ecuacion de 2 grado
  */
 package ejerciciopropuesto23;
 
-/**
- *
- * @author diego
- */
 public class EjercicioPropuesto23 {
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String[] args) {
-        // TODO code application logic here
+        
     }
     
 }
