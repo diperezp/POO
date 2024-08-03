@@ -475,12 +475,6 @@ public class FigurasGeometricasInterfaz extends javax.swing.JFrame {
         areaTextTrianguloRectangulo.append("El Triangulo es un: " + trianguloRec.determinarTipoTriangulo()+"\n");
     }//GEN-LAST:event_btnTipoTrianguloActionPerformed
 
-
-    
-    
-
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea areaTextTrianguloRectangulo;
     private javax.swing.JButton btnAreaCirculo;
