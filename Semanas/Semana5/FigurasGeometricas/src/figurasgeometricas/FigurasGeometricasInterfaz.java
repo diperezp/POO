@@ -59,11 +59,11 @@ public class FigurasGeometricasInterfaz extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         btnAreaTrianguloRectangulo = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnPerimetroTrianguloRectangulo = new javax.swing.JButton();
+        btnTipoTriangulo = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        areaTextTrianguloRectangulo = new javax.swing.JTextArea();
+        btnHipotenusa = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,9 +75,20 @@ public class FigurasGeometricasInterfaz extends javax.swing.JFrame {
 
         jLabel2.setText("Radio (m)");
 
+        txtRadioCirculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtRadioCirculoActionPerformed(evt);
+            }
+        });
+
         jLabel3.setText("Area (m²)");
 
         btnAreaCirculo.setText("Area (m²)");
+        btnAreaCirculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAreaCirculoActionPerformed(evt);
+            }
+        });
 
         btnPerimetroCirculo.setText("Perimetro (m)");
         btnPerimetroCirculo.addActionListener(new java.awt.event.ActionListener() {
@@ -93,9 +104,19 @@ public class FigurasGeometricasInterfaz extends javax.swing.JFrame {
 
         jLabel8.setText("Perimetro (m)");
 
-        btnAreaCuadrado.setText("Area");
+        btnAreaCuadrado.setText("Area (m²)");
+        btnAreaCuadrado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAreaCuadradoActionPerformed(evt);
+            }
+        });
 
-        btnPerimetroCuadrado.setText("Perimetro");
+        btnPerimetroCuadrado.setText("Perimetro (m)");
+        btnPerimetroCuadrado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPerimetroCuadradoActionPerformed(evt);
+            }
+        });
 
         jLabel10.setFont(new java.awt.Font("Liberation Sans", 0, 15)); // NOI18N
         jLabel10.setText("Rectangulo");
@@ -103,6 +124,11 @@ public class FigurasGeometricasInterfaz extends javax.swing.JFrame {
         jLabel11.setText("Base (m)");
 
         btnAreaRectangulo.setText("Area (m²)");
+        btnAreaRectangulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAreaRectanguloActionPerformed(evt);
+            }
+        });
 
         btnPerimetroRectangulo.setText("Perimetro (m)");
         btnPerimetroRectangulo.addActionListener(new java.awt.event.ActionListener() {
@@ -121,16 +147,36 @@ public class FigurasGeometricasInterfaz extends javax.swing.JFrame {
         jLabel7.setText("Triangulo Rectangulo");
 
         btnAreaTrianguloRectangulo.setText("Area (m²)");
+        btnAreaTrianguloRectangulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAreaTrianguloRectanguloActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Perimetro (m)");
+        btnPerimetroTrianguloRectangulo.setText("Perimetro (m)");
+        btnPerimetroTrianguloRectangulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPerimetroTrianguloRectanguloActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Hipotenusa");
+        btnTipoTriangulo.setText("Tipo");
+        btnTipoTriangulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTipoTrianguloActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("jButton4");
+        areaTextTrianguloRectangulo.setColumns(20);
+        areaTextTrianguloRectangulo.setRows(5);
+        jScrollPane1.setViewportView(areaTextTrianguloRectangulo);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        btnHipotenusa.setText("Hipotenusa");
+        btnHipotenusa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHipotenusaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -172,22 +218,6 @@ public class FigurasGeometricasInterfaz extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel5)
-                                    .addComponent(txtLadoCuadrado, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                    .addComponent(txtAreaCuadrado))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel8)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addGroup(jPanel2Layout.createSequentialGroup()
-                                            .addComponent(btnAreaCuadrado)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(btnPerimetroCuadrado))
-                                        .addComponent(txtPerimetroCuadrado, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
@@ -197,16 +227,29 @@ public class FigurasGeometricasInterfaz extends javax.swing.JFrame {
                                     .addComponent(jLabel4))
                                 .addGap(30, 30, 30)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(btnAreaTrianguloRectangulo, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(btnAreaTrianguloRectangulo)
-                                        .addGap(29, 29, 29)
-                                        .addComponent(jButton2))
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(btnHipotenusa)
+                                        .addGap(227, 227, 227))
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(btnPerimetroTrianguloRectangulo)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel3)
+                                        .addComponent(jLabel6)
+                                        .addComponent(jLabel5)
+                                        .addComponent(txtLadoCuadrado, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                        .addComponent(txtAreaCuadrado))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel8)
                                         .addGroup(jPanel2Layout.createSequentialGroup()
-                                            .addComponent(jButton3)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jButton4))
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                            .addComponent(btnAreaCuadrado)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(btnPerimetroCuadrado))
+                                        .addComponent(txtPerimetroCuadrado, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                .addComponent(btnTipoTriangulo)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -245,7 +288,7 @@ public class FigurasGeometricasInterfaz extends javax.swing.JFrame {
                     .addComponent(jLabel10)
                     .addComponent(jLabel7)
                     .addComponent(btnAreaTrianguloRectangulo)
-                    .addComponent(jButton2))
+                    .addComponent(btnPerimetroTrianguloRectangulo))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -272,9 +315,9 @@ public class FigurasGeometricasInterfaz extends javax.swing.JFrame {
                             .addComponent(txtAreaRectangulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton3))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnTipoTriangulo)
+                    .addComponent(btnHipotenusa))
                 .addContainerGap(119, Short.MAX_VALUE))
         );
 
@@ -282,7 +325,9 @@ public class FigurasGeometricasInterfaz extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 892, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -292,60 +337,162 @@ public class FigurasGeometricasInterfaz extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnPerimetroCirculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerimetroCirculoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnPerimetroCirculoActionPerformed
-
+    //Definimos la instancias de los objetos necesarios fuera de los metodos
+    // de tal manera que el ambito de los objetos abarque a todas los metodos
+    //Circulo asignamos el parametro radio como 0
+    Circulo circle = new Circulo(0);
+    //Cuadrado asignamos el parametro lado como 0
+    Cuadrado squart = new Cuadrado(0);
+    //Rectangulo asignamos los parametros base y altura como 0
+    Rectangulo rectangul = new Rectangulo(0,0);
+    //Triangulo Rectangulo asignamos los parametro base y altura como 0
+    TrianguloRectangulo trianguloRec = new TrianguloRectangulo(0, 0);
+    
     private void btnPerimetroRectanguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerimetroRectanguloActionPerformed
-        // TODO add your handling code here:
+        //Asigamos los parametros Base y Altura
+        rectangul.base=Integer.parseInt(txtBaseRectangulo.getText());
+        rectangul.altura=Integer.parseInt(txtAlturaRectangulo.getText());
+        
+        //Limpiamos el valor del textField
+        txtPerimetroRectangulo.setText("");
+
+        //Calculamos y asignamos el valor del Perimetro de rectangul
+        txtPerimetroRectangulo.setText(Double.toString(rectangul.calcularPerimetro()));
+
     }//GEN-LAST:event_btnPerimetroRectanguloActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FigurasGeometricasInterfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FigurasGeometricasInterfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FigurasGeometricasInterfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FigurasGeometricasInterfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void btnAreaRectanguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAreaRectanguloActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FigurasGeometricasInterfaz().setVisible(true);
-            }
-        });
-    }
+        //Asigamos los parametros Base y Altura
+        rectangul.base=Integer.parseInt(txtBaseRectangulo.getText());
+        rectangul.altura=Integer.parseInt(txtAlturaRectangulo.getText());
+
+        //Limpiamos el txtField Area
+        txtAreaRectangulo.setText("");
+
+        //Calculamos y asignamos el valor del area de rectangul
+        txtAreaRectangulo.setText(Double.toString(rectangul.calcularArea()));
+
+    }//GEN-LAST:event_btnAreaRectanguloActionPerformed
+
+    private void btnPerimetroCuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerimetroCuadradoActionPerformed
+        //Asignamos el valor del parametro Lado ingresado en el txtField txtLadoCuadrado
+        squart.lado=Integer.parseInt(txtLadoCuadrado.getText());
+
+        //Limpiamos el txtField Perimetro
+        txtPerimetroCuadrado.setText("");
+
+        //Calculamos y asignamos el valor del Perimetro de squart
+        txtPerimetroCuadrado.setText(Double.toString(squart.calcularPerimetro()));
+    }//GEN-LAST:event_btnPerimetroCuadradoActionPerformed
+
+    private void btnAreaCuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAreaCuadradoActionPerformed
+        //Asignamos el valor del parametro Lado ingresado en el txtField txtLadoCuadrado
+        squart.lado=Integer.parseInt(txtLadoCuadrado.getText());
+
+        //Limpiamos el txtField Area
+        txtAreaCuadrado.setText("");
+
+        //Calculamos y asignamos el valor del Area de squart
+        txtAreaCuadrado.setText(Double.toString(squart.calcularArea()));
+
+    }//GEN-LAST:event_btnAreaCuadradoActionPerformed
+
+    private void btnPerimetroCirculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerimetroCirculoActionPerformed
+        //Asignamos el valor del parametro Radio al objeto circle
+        circle.radio=Integer.parseInt(txtRadioCirculo.getText());
+
+        //Limpiamos el valor en el textField txtPerimetroCirculo
+        txtPerimetroCirculo.setText("");
+
+        //Calculamos y Asignamos el valor del permitro de circle
+        txtPerimetroCirculo.setText(Double.toString(circle.calcularPerimetro()));
+    }//GEN-LAST:event_btnPerimetroCirculoActionPerformed
+
+    private void btnAreaCirculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAreaCirculoActionPerformed
+        //Asignamos el valor del parametro Radio al objeto circle
+        circle.radio=Integer.parseInt(txtRadioCirculo.getText());
+
+        //Limpiamos el valor en el textfield txtAreaCirculo
+        txtAreaCirculo.setText("");
+
+        //Calculamos y Asignamos el valor del area del circulo
+        txtAreaCirculo.setText(Double.toString(circle.calcularArea()));
+    }//GEN-LAST:event_btnAreaCirculoActionPerformed
+
+    private void txtRadioCirculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRadioCirculoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRadioCirculoActionPerformed
+
+    private void btnAreaTrianguloRectanguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAreaTrianguloRectanguloActionPerformed
+
+        //Asignamos los valores de los Parametros Base y Altura al instancia trianguloRec
+        trianguloRec.base=Integer.parseInt(txtBaseTrianguloRectangulo.getText());
+        trianguloRec.altura=Integer.parseInt(txtAlturaTrianguloRectangulo.getText());
+        
+        //Limpiamos el valor en el textArea
+        areaTextTrianguloRectangulo.setText("");
+        
+        //Calculamos el valor del area y lo presentamos el Area de texto
+        areaTextTrianguloRectangulo.append("Area: "+trianguloRec.calcularArea()+" (m²)\n");
+        
+    }//GEN-LAST:event_btnAreaTrianguloRectanguloActionPerformed
+
+    private void btnPerimetroTrianguloRectanguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerimetroTrianguloRectanguloActionPerformed
+        //Asignamos los valores de los Parametros Base y Altura al instancia trianguloRec
+        trianguloRec.base=Integer.parseInt(txtBaseTrianguloRectangulo.getText());
+        trianguloRec.altura=Integer.parseInt(txtAlturaTrianguloRectangulo.getText());
+        
+        //Limpiamos el valor en el textArea
+        areaTextTrianguloRectangulo.setText("");
+
+        //Calculamos el valor del perimetro y lo presentamos el Area de texto
+        areaTextTrianguloRectangulo.append("Perimetro: " + trianguloRec.calcularPerimetro()+" (m)\n");
+       
+    }//GEN-LAST:event_btnPerimetroTrianguloRectanguloActionPerformed
+
+    private void btnHipotenusaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHipotenusaActionPerformed
+        //Asignamos los valores de los Parametros Base y Altura al instancia trianguloRec
+        trianguloRec.base=Integer.parseInt(txtBaseTrianguloRectangulo.getText());
+        trianguloRec.altura=Integer.parseInt(txtAlturaTrianguloRectangulo.getText());
+        
+        //Limpiamos el valor en el textArea
+        areaTextTrianguloRectangulo.setText("");
+
+        //Calculamos el valor del Hipotenusa y lo presentamos el Area de texto
+        areaTextTrianguloRectangulo.append("Hipotenusa: " + trianguloRec.calcularHipotenusa()+" (m)\n");
+    }//GEN-LAST:event_btnHipotenusaActionPerformed
+
+    private void btnTipoTrianguloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTipoTrianguloActionPerformed
+        //Asignamos los valores de los Parametros Base y Altura al instancia trianguloRec
+        trianguloRec.base=Integer.parseInt(txtBaseTrianguloRectangulo.getText());
+        trianguloRec.altura=Integer.parseInt(txtAlturaTrianguloRectangulo.getText());
+        
+        //Limpiamos el valor en el textArea
+        areaTextTrianguloRectangulo.setText("");
+
+        //Calculamos el tipo de triangulo y lo presentamos el Area de texto
+        areaTextTrianguloRectangulo.append("El Triangulo es un: " + trianguloRec.determinarTipoTriangulo()+"\n");
+    }//GEN-LAST:event_btnTipoTrianguloActionPerformed
+
+
+    
+    
+
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea areaTextTrianguloRectangulo;
     private javax.swing.JButton btnAreaCirculo;
     private javax.swing.JButton btnAreaCuadrado;
     private javax.swing.JButton btnAreaRectangulo;
     private javax.swing.JButton btnAreaTrianguloRectangulo;
+    private javax.swing.JButton btnHipotenusa;
     private javax.swing.JButton btnPerimetroCirculo;
     private javax.swing.JButton btnPerimetroCuadrado;
     private javax.swing.JButton btnPerimetroRectangulo;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnPerimetroTrianguloRectangulo;
+    private javax.swing.JButton btnTipoTriangulo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -361,7 +508,6 @@ public class FigurasGeometricasInterfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField txtAlturaRectangulo;
     private javax.swing.JTextField txtAlturaTrianguloRectangulo;
     private javax.swing.JTextField txtAreaCirculo;

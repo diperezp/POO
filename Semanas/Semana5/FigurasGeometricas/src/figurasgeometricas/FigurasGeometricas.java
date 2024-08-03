@@ -1,20 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+/**
+ * @author diperezp
+ * @date 2-8-2024
+ * @brief Ejecucion de la interfaz grafica de FigurasGeometricas
  */
 package figurasgeometricas;
 
-/**
- *
- * @author e420-00
- */
+
 public class FigurasGeometricas {
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String[] args) {
-        // TODO code application logic here
+        //Instanciamos la clase FigurasGeometricasInterfaz
+        FigurasGeometricasInterfaz GUIFG=new FigurasGeometricasInterfaz();
+        GUIFG.setVisible(true);
+        GUIFG.setLocationRelativeTo(null);
     }
     
 }
