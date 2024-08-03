@@ -145,10 +145,24 @@ public class Ecuacion2GradoInterfaz extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Instaciamos la class Ecuacion2Grado
+    Ecuacion2Grado ecuacion =new Ecuacion2Grado(0,0,0);
     
     
     private void btnSolucionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSolucionActionPerformed
-        // TODO add your handling code here:
+        //Asiganamos los valores de los coeficientes de la ecuacion
+        ecuacion.A=Double.parseDouble(txtA.getText());
+        ecuacion.B=Double.parseDouble(txtB.getText());
+        ecuacion.C=Double.parseDouble(txtC.getText());
+        
+        //Limpiamos los dos campos de textos donde se preentaran las soluciones
+        txtX_1.setText("");
+        txtX_2.setText("");
+        
+        //Calculamos y asignamos los valores de las soluciones de la ecuacion
+        txtX_1.setText(ecuacion.solucionEcuacion()[0]);
+        txtX_2.setText(ecuacion.solucionEcuacion()[1]);
+
     }//GEN-LAST:event_btnSolucionActionPerformed
 
   
