@@ -21,7 +21,7 @@ import javax.swing.*;
 
 public class VentanaPrincipal extends JFrame implements ActionListener {
     
-    private ListaPersonas lista; //El objeto ListasPersonas de la aplicacion
+    private final ListaPersonas lista; //El objeto ListasPersonas de la aplicacion
     private Container contenedor; /* Un contenedor de elementos graficos*/
     
     
@@ -153,6 +153,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
     
     /**
      * Metodo que genera los eventos generados en la ventana principal 
+     * @param evento
      */
     
     @Override
@@ -161,12 +162,12 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
         //Si se pulsa el boton añadir 
         anadirPersona(); //Se invoca añadir persona
     }
-        else if(evento.getSource()==eliminar){
+    if(evento.getSource()==eliminar){
             //Si se pulsoel boton eliminar
             /* Se invoca el metodo eliminarNombre que elimina el elemento seleccionado */
             eliminarNombre(listaNombres.getSelectedIndex());
         }
-        else if (evento.getSource()==borrarLista){
+    if (evento.getSource()==borrarLista){
             /* Si se pulsa el boton borrarlista*/
             borrarLista(); //Se invoca borrar lista
         }
@@ -218,6 +219,8 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
         lista.borrarLista(); //Se elimina todas las personas del vector
         modelo.clear(); // Limpia el Jlist, la lista grafica de personas
     }
+    
+    
     
     
     
