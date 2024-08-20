@@ -1,33 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-package Personas;
-
-
-import javax.swing.*;
-
-
-
 /**
  *
  * @author diego
  */
+package Personas;
+
+import javax.swing.*;
+
 public class VentanaPrincipal extends javax.swing.JFrame {
         ListaPersonas lista = new ListaPersonas();
-        javax.swing.DefaultListModel modelo = new javax.swing.DefaultListModel();
-    
-
+        javax.swing.DefaultListModel modelo = new javax.swing.DefaultListModel();  
     /**
      * Creates new form VentanaPrincipal
      */
     public VentanaPrincipal() {
         initComponents();
-        
-
-        
-        
-        
         setTitle("Personas");
         setSize(270,350);
         setLocationRelativeTo(null);
