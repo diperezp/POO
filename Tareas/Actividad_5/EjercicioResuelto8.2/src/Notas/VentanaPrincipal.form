@@ -83,13 +83,13 @@
                   <Component id="notaCinco" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="campoNotaCinco" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="calcular" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="limpiar" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="limpiar" min="-2" max="-2" attributes="0"/>
+                  <Component id="calcular" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" pref="157" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" pref="163" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -149,6 +149,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Limpiar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="limpiarActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
@@ -161,6 +164,7 @@
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
+            <Property name="text" type="java.lang.String" value="Promedio:&#xa; &#xa;Desviacion estandar:&#xa; &#xa;Valor mayor:&#xa; &#xa;valor menor:&#xa;"/>
           </Properties>
         </Component>
       </SubComponents>

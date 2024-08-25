@@ -9,12 +9,20 @@ import java.util.*;
 
 public class Notas {
     //Definicion de la lista
-    double[] listaNotas;
+     double[] listaNotas= new double[5];;
     
     
     public void Notas(){
         //Definimos la longitid de la lista
-        listaNotas = new double[5];
+        
+        //Iniciamos los valor del vector con valores dummy
+        this.listaNotas[0]=0;
+        this.listaNotas[1]=0;
+        this.listaNotas[2]=0;
+        this.listaNotas[3]=0;
+        this.listaNotas[4]=0;
+        
+        
         
         
     }

@@ -83,9 +83,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         limpiar.setText("Limpiar");
+        limpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limpiarActionPerformed(evt);
+            }
+        });
 
         cuadroInformacion.setColumns(20);
         cuadroInformacion.setRows(5);
+        cuadroInformacion.setText("Promedio:\n \nDesviacion estandar:\n \nValor mayor:\n \nvalor menor:\n");
         jScrollPane1.setViewportView(cuadroInformacion);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -140,18 +146,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(notaCinco)
                     .addComponent(campoNotaCinco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(calcular)
-                    .addComponent(limpiar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(limpiar)
+                    .addComponent(calcular))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Instaciamos la clase Notas
+    Notas notas = new Notas();
+    
     private void campoNotaDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNotaDosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoNotaDosActionPerformed
@@ -175,8 +184,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
          JOptionPane.showMessageDialog(null,"Debe de ingresar los datos\nen todos los campos de texto", "Error",JOptionPane.ERROR_MESSAGE);   
         }
         else{
-            //Instaciamos la clase Notas
-            Notas notas = new Notas();
+
         
             //Asiganmos los valores ingresados a los parametros del Objeto
             notas.listaNotas[0]=Double.parseDouble(campoNotaUno.getText());    //Nota 1
@@ -184,17 +192,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             notas.listaNotas[2]=Double.parseDouble(campoNotaTres.getText());   //Nota 3
             notas.listaNotas[3]=Double.parseDouble(campoNotaCuatro.getText()); //Nota 4
             notas.listaNotas[4]=Double.parseDouble(campoNotaCinco.getText());  //Nota 5
-            
-            
-            
+
+            cuadroInformacion.setText("");
                     
-            cuadroInformacion.setText("Promedio = "+ notas.calcularPromedio()+"\n");
-            cuadroInformacion.setText("Desviacion estandar = "+ notas.calcularDesviacion()+"\n");
-            cuadroInformacion.setText("Valor mayor = "+notas.calcularMayor()+"\n");
-            cuadroInformacion.setText("Valor menor = "+notas.calcularMenor()+"\n");
+            cuadroInformacion.append("Promedio = "+String.valueOf(String.format("%.2f", notas.calcularPromedio())) +"\n\n");
+            cuadroInformacion.append("Desviacion estandar = "+ String.valueOf(String.format("%.2f",notas.calcularDesviacion()))+"\n\n");
+            cuadroInformacion.append("Valor mayor = "+String.valueOf(String.format("%.2f",notas.calcularMayor()))+"\n\n");
+            cuadroInformacion.append("Valor menor = "+String.valueOf(String.format("%.2f",notas.calcularMenor()))+"\n");
             
         }
     }//GEN-LAST:event_calcularActionPerformed
+
+    private void limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarActionPerformed
+        //Limpiamos el area de texto
+        cuadroInformacion.setText("Promedio: \n\nDesviacion estandar:\n\nValor mayor:\n\nvalor menor:\n");
+        //Ademas limpiamos los campos de texto 
+        campoNotaUno.setText("");
+        campoNotaDos.setText("");
+        campoNotaTres.setText("");
+        campoNotaCuatro.setText("");
+        campoNotaCinco.setText("");
+    }//GEN-LAST:event_limpiarActionPerformed
 
 
 
