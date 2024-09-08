@@ -32,8 +32,6 @@ class DisplayFriends {
              * Iniciamos con la lectura del texto que esta en el archivo
              * 
              */
-            System.out.println(raf.length());
-            System.out.println(raf.getFilePointer());
             while (raf.getFilePointer() < raf.length()) {
 
                 // asignamos linea a linea ala varibale nameNumberString
