@@ -4,6 +4,8 @@
  */
 package friends;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author diego
@@ -76,8 +78,18 @@ public class MainForm extends javax.swing.JFrame {
         });
 
         jButtonDelete.setText("Delete");
+        jButtonDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDeleteActionPerformed(evt);
+            }
+        });
 
         jButtonClear.setText("Clear");
+        jButtonClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonClearActionPerformed(evt);
+            }
+        });
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -156,56 +168,67 @@ public class MainForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    //Instanciamos la clase Friend para que el ambito abarque todas las funciones
+    CRUD amigo = new CRUD();
+    
     private void jTextNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNumberActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextNumberActionPerformed
 
     private void jButtonUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUpdateActionPerformed
-        // TODO add your handling code here:
+        if(jTextName.getText().trim().isEmpty() && jTextName.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(null,"Debe de ingresar los datos\nen todos los campos de texto", "Error",JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            amigo.updateFriend(jTextName.getText(),Long.parseLong(jTextNumber.getText()));
+        }
+        
     }//GEN-LAST:event_jButtonUpdateActionPerformed
 
     private void jButtonReadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonReadActionPerformed
-        // TODO add your handling code here:
+        jTextArea1.setText("");
+        int longitud=amigo.lenghtFile();
+        if(longitud==0){
+            jTextArea1.setText("The file is empty: add a Friend!!");
+        }
+        else{
+            for(String elemento:amigo.readFriend(longitud)){
+            jTextArea1.append(elemento);
+            }
+            
+        }
+
     }//GEN-LAST:event_jButtonReadActionPerformed
 
     private void JButtonCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButtonCreateActionPerformed
-        // TODO add your handling code here:
+        
+        
+        if(jTextName.getText().trim().isEmpty() && jTextName.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(null,"Debe de ingresar los datos\nen todos los campos de texto", "Error",JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            amigo.addFriend(jTextName.getText(),Long.parseLong(jTextNumber.getText())); 
+        }
     }//GEN-LAST:event_JButtonCreateActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    private void jButtonDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeleteActionPerformed
+        if(jTextName.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(null,"You must enter the name you want to delete!!", "Error",JOptionPane.ERROR_MESSAGE);
         }
-        //</editor-fold>
+        else{
+            amigo.deleteFriend(jTextName.getText());
+        }
+    }//GEN-LAST:event_jButtonDeleteActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MainForm().setVisible(true);
-            }
-        });
-    }
+    private void jButtonClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClearActionPerformed
+        //Limpiamos los campos de interaccion
+        jTextName.setText("");
+        jTextNumber.setText("");
+        jTextArea1.setText("");
+    }//GEN-LAST:event_jButtonClearActionPerformed
+
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JButtonCreate;
