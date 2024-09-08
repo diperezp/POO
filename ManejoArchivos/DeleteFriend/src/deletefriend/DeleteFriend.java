@@ -26,7 +26,7 @@ public static void main(String[] args) {
 
             // Get the name of the contact to be updated
             // from the Command line argument
-            System.out.println("Enter name to be delet:");
+            System.out.println("Enter name to be delete:");
             String newName=entrada.nextLine();
             
             String nameNumberString;
@@ -65,7 +65,7 @@ public static void main(String[] args) {
                 number = Long.parseLong(lineSplit[1]);
 
                 // if condition to find existence of record.
-                if (name == newName) {
+                if (name.equals(newName)) {
                     found = true;
                     break;
                 }
